@@ -6,27 +6,28 @@ import com.video.streaming.services.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Optional;
+
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
+
     private final UserRepository userRepository;
-    @Override
-    public User addNewUser(User user){
+
+    public List<User> getAllUsers() {
+        return userRepository.findAll();
+    }
+
+    public Optional<User> getUserById(int id) {
+        return userRepository.findById(id);
+    }
+
+    public User createUser(User user) {
         return userRepository.save(user);
     }
 
-    @Override
-    public void deleteUser(int userId) {
-
-    }
-
-    @Override
-    public User UpdateUser(User user) {
-        return null;
-    }
-
-    @Override
-    public User findByEmail(String email) {
-        return null;
+    public void deleteUser(int id) {
+        userRepository.deleteById(id);
     }
 }

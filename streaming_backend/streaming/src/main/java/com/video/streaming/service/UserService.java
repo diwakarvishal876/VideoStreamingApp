@@ -5,13 +5,18 @@ import com.video.streaming.entity.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Optional;
 
+@Service
 public interface UserService {
 
-    User addNewUser(User user);
-    void deleteUser(int userId);
-    User UpdateUser(User user);
-    User findByEmail(String email);
+    public List<User> getAllUsers();
 
+    public Optional<User> getUserById(int id);
+
+    public User createUser(User user);
+
+    public void deleteUser(int id);
 
 }
