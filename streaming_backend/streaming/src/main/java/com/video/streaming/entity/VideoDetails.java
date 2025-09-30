@@ -13,12 +13,15 @@ import lombok.Setter;
 public class VideoDetails {
 
     @Id
-    String video_id;
+    private String video_id;
 
-    String Description;
+    private String description;
+    private String path;
+    private String tags;
 
-    String path;
-    String tags;
+    @ManyToOne
+    @JoinColumn(name = "channel_id", referencedColumnName = "id")
+    private ChannelDetails channelDetails;
 
 
 

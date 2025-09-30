@@ -1,11 +1,11 @@
-package com.video.streaming.services;
+package com.video.streaming.service;
 
 import com.video.streaming.entity.VideoDetails;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-@Service
+
 public interface VideoService {
 
     public List<VideoDetails> getAllVideos();

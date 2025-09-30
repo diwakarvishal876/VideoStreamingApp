@@ -1,12 +1,14 @@
-package com.video.streaming.services.impl;
+package com.video.streaming.service.impl;
 
 import com.video.streaming.Repository.ChannelRepository;
 import com.video.streaming.entity.ChannelDetails;
-import com.video.streaming.services.ChannelService;
+import com.video.streaming.service.ChannelService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+@Service
 @RequiredArgsConstructor
 public class ChannelServiceImpl implements ChannelService {
 

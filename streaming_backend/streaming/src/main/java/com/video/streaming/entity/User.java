@@ -1,5 +1,6 @@
 package com.video.streaming.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -20,14 +21,11 @@ public class User {
     String email;
     String password;
     String name;
-    String channel_id;
-
-//    Date CTL_UPD_DTM;
-//    Date CTL_CRE_DTM;
 
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "channel_id", referencedColumnName = "id")
+    @JsonManagedReference
+    private ChannelDetails channelDetails;
 
-
-//    @OneToOne
-//    ChannelDetailsService channelDetails;
 }

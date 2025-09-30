@@ -1,8 +1,8 @@
-package com.video.streaming.services.impl;
+package com.video.streaming.service.impl;
 
 import com.video.streaming.Repository.UserRepository;
 import com.video.streaming.entity.User;
-import com.video.streaming.services.UserService;
+import com.video.streaming.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

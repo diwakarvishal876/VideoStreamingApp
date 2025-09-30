@@ -1,11 +1,11 @@
-package com.video.streaming.services;
+package com.video.streaming.service;
 
 import com.video.streaming.entity.ChannelDetails;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-@Service
+
 public interface ChannelService {
 
     public List<ChannelDetails> getAllChannels();

@@ -1,14 +1,12 @@
-package com.video.streaming.services;
+package com.video.streaming.service;
 
-import com.video.streaming.Repository.UserRepository;
 import com.video.streaming.entity.User;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
-@Service
+
 public interface UserService {
 
     public List<User> getAllUsers();

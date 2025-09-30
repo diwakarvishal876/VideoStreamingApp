@@ -1,13 +1,14 @@
-package com.video.streaming.services.impl;
+package com.video.streaming.service.impl;
 
 import com.video.streaming.Repository.VideoRepository;
 import com.video.streaming.entity.VideoDetails;
-import com.video.streaming.services.VideoService;
+import com.video.streaming.service.VideoService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-
+@Service
 @RequiredArgsConstructor
 public class VideoServiceImp implements VideoService {
     private final VideoRepository videoRepository;

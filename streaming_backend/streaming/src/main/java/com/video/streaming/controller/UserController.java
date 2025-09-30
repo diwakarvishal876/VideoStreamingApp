@@ -1,12 +1,12 @@
 package com.video.streaming.controller;
 
 import com.video.streaming.entity.User;
-import com.video.streaming.services.UserService;
+import com.video.streaming.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/user")
@@ -16,17 +16,25 @@ public class UserController {
     private final UserService userService;
 
     @GetMapping
-    List<User> getAllUser(){
+    public List<User> getAllUsers() {
+        return userService.getAllUsers();
+    }
 
-        List<User> users=new ArrayList<>();
-        return users;
+    @GetMapping("/{id}")
+    public Optional<User> getUserById(@PathVariable int id) {
+        return userService.getUserById(id);
     }
 
     @PostMapping
-    User addNewUser(@RequestBody User user){
-        return userService.addNewUser(user);
+    public User createUser(@RequestBody User user) {
+        return userService.createUser(user);
     }
 
-    @PutMapping
+    @DeleteMapping("/{id}")
+    public void deleteUser(@PathVariable int id) {
+        userService.deleteUser(id);
+    }
+
+
 
 }
